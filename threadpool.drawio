@@ -1,0 +1,61 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.0.9 Chrome/128.0.6613.186 Electron/32.2.5 Safari/537.36" version="26.0.9">
+  <diagram name="Page-1" id="A2KzF6zvE9TMMP_vtKxd">
+    <mxGraphModel dx="1964" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mkb6wdCKDETYSr460KwH-1" target="uFgI0zCPGxUAruyYwe1g-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mkb6wdCKDETYSr460KwH-1" target="uFgI0zCPGxUAruyYwe1g-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="mkb6wdCKDETYSr460KwH-1" target="uFgI0zCPGxUAruyYwe1g-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="mkb6wdCKDETYSr460KwH-1" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Constructor&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="90" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-1" value="Queue of threads, each thread in queue is a wrapper around user submitted function. Need some way to wait until matching thread assigns the wrapper thread a&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="300" width="330" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="uFgI0zCPGxUAruyYwe1g-8" target="uFgI0zCPGxUAruyYwe1g-21">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="210" y="410" />
+              <mxPoint x="280" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-8" value="Queue of tasks (two times queue of threads)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="300" width="330" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="uFgI0zCPGxUAruyYwe1g-15" target="uFgI0zCPGxUAruyYwe1g-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-17" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Push task (arbitrary function)&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uFgI0zCPGxUAruyYwe1g-16">
+          <mxGeometry x="-0.1118" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-15" value="User" style="shape=actor;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="550" width="40" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-18" value="Push waits if load is two times number of threads" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="-280" y="500" width="280" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-21" value="Matching thread, pops from queue of tasks and queue of threads, waits if any of them are empty" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="230" y="440" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="uFgI0zCPGxUAruyYwe1g-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.176;entryY=0.988;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="uFgI0zCPGxUAruyYwe1g-21" target="uFgI0zCPGxUAruyYwe1g-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="410" />
+              <mxPoint x="448" y="410" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
