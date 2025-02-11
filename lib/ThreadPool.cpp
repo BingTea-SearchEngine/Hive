@@ -47,6 +47,7 @@ void ThreadPool::queue(Task t) {
         pthread_cond_wait(&_queueCV, &_queueMutex);
     }
     _queue.push(t);
+    pthread_cond_signal(&_queueCV);
     pthread_mutex_unlock(&_queueMutex);
 }
 
@@ -96,3 +97,4 @@ void* funcWrapper(void* arguments) {
         pthread_mutex_unlock(args->currentTasksMutex);
     }
 }
+

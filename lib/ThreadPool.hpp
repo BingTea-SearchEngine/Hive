@@ -3,7 +3,7 @@
 #include <optional>
 #include <pthread.h>
 #include <queue>
-#include <unordered_set>
+
 
 typedef struct Task {
     std::function<void()> func;
@@ -68,6 +68,3 @@ private:
 // Function that wraps around user defined task. Waits while Task* task is a nullptr. Never returns
 void* funcWrapper(void *args);
 
-// Function that pops from the task queue and assigns it to a thread. Waits if no threads are
-// available
-void* matcher(void* args);
