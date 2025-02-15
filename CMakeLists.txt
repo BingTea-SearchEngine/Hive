@@ -32,9 +32,9 @@ target_link_libraries(${THIS} PUBLIC pthread)
 add_executable(main src/main.cpp)
 target_link_libraries(main PUBLIC ${THIS})
 
-add_executable(Tests tests/test.cpp)
-target_link_libraries(Tests PRIVATE ${THIS} GTest::gtest_main)
+add_executable(ThreadPoolTests tests/ThreadPoolTests.cpp)
+target_link_libraries(ThreadPoolTests PRIVATE ${THIS} GTest::gtest_main)
 
 include(GoogleTest)
-gtest_discover_tests(Tests)
+gtest_discover_tests(ThreadPoolTests)
 
