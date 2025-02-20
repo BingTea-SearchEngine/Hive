@@ -87,13 +87,13 @@ void* funcWrapper(void* arguments) {
         pthread_mutex_unlock(args->queueMutex);
 
         pthread_mutex_lock(args->currentTasksMutex);
-        args->currentTasks++;
+        ++*(args->currentTasks);
         pthread_mutex_unlock(args->currentTasksMutex);
 
         task.func();
 
         pthread_mutex_lock(args->currentTasksMutex);
-        args->currentTasks--;
+        --*(args->currentTasks);
         pthread_cond_broadcast(args->currentTasksCV);
         pthread_mutex_unlock(args->currentTasksMutex);
     }
